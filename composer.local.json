@@ -1,0 +1,11 @@
+{
+    "require": {
+        "mediawiki/semantic-media-wiki": "*",
+        "mediawiki/semantic-result-formats": "*",
+        "mediawiki/page-forms": "*",
+        "mediawiki/maps": "*",
+        "universal-omega/dynamic-page-list4": "*",
+        "wikimedia/equivset": "*",
+        "wikimedia/lucene-explain-parser": "*"
+    }
+}

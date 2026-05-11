@@ -1,0 +1,31 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(256,256)">
+    <polygon points="0,-220 190,-110 190,110 0,220 -190,110 -190,-110"
+             fill="none" stroke="#7c5cbf" stroke-width="6" opacity="0.35"/>
+    <polygon points="0,-144 124,-72 124,72 0,144 -124,72 -124,-72"
+             fill="none" stroke="#7c5cbf" stroke-width="4" opacity="0.6"/>
+    <path d="M0,0 L32,-136 L72,-116 Z" fill="#7c5cbf" opacity="0.18"/>
+    <path d="M0,0 L72,-116 L120,-64 Z" fill="#7c5cbf" opacity="0.28"/>
+    <path d="M0,0 L120,-64 L124,0 Z" fill="#7c5cbf" opacity="0.18"/>
+    <path d="M0,0 L124,0 L120,64 Z" fill="#7c5cbf" opacity="0.28"/>
+    <path d="M0,0 L120,64 L72,116 Z" fill="#7c5cbf" opacity="0.18"/>
+    <path d="M0,0 L72,116 L32,136 Z" fill="#7c5cbf" opacity="0.28"/>
+    <path d="M0,0 L32,136 L-32,136 Z" fill="#7c5cbf" opacity="0.18"/>
+    <path d="M0,0 L-32,136 L-72,116 Z" fill="#7c5cbf" opacity="0.28"/>
+    <path d="M0,0 L-72,116 L-120,64 Z" fill="#7c5cbf" opacity="0.18"/>
+    <path d="M0,0 L-120,64 L-124,0 Z" fill="#7c5cbf" opacity="0.28"/>
+    <path d="M0,0 L-124,0 L-120,-64 Z" fill="#7c5cbf" opacity="0.18"/>
+    <path d="M0,0 L-120,-64 L-72,-116 Z" fill="#7c5cbf" opacity="0.28"/>
+    <path d="M0,0 L-72,-116 L-32,-136 Z" fill="#7c5cbf" opacity="0.18"/>
+    <path d="M0,0 L-32,-136 L32,-136 Z" fill="#7c5cbf" opacity="0.28"/>
+    <line x1="0" y1="-220" x2="0" y2="-144" stroke="#7c5cbf" stroke-width="3" opacity="0.3"/>
+    <line x1="190" y1="-110" x2="124" y2="-72" stroke="#7c5cbf" stroke-width="3" opacity="0.3"/>
+    <line x1="190" y1="110" x2="124" y2="72" stroke="#7c5cbf" stroke-width="3" opacity="0.3"/>
+    <line x1="0" y1="220" x2="0" y2="144" stroke="#7c5cbf" stroke-width="3" opacity="0.3"/>
+    <line x1="-190" y1="110" x2="-124" y2="72" stroke="#7c5cbf" stroke-width="3" opacity="0.3"/>
+    <line x1="-190" y1="-110" x2="-124" y2="-72" stroke="#7c5cbf" stroke-width="3" opacity="0.3"/>
+    <circle cx="0" cy="0" r="64" fill="none" stroke="#7c5cbf" stroke-width="3" opacity="0.5"/>
+    <circle cx="0" cy="0" r="36" fill="#7c5cbf" opacity="0.92"/>
+    <circle cx="-12" cy="-12" r="12" fill="white" opacity="0.22"/>
+  </g>
+</svg>
