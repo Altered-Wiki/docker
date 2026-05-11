@@ -169,6 +169,9 @@ $wgHooks['SkinAddFooterLinks'][] = static function ( Skin $skin, string $key, ar
 		$href = htmlspecialchars( $skin->msg( 'githubpage' )->text(), ENT_QUOTES );
 		$text = htmlspecialchars( $skin->msg( 'githubsite' )->text(), ENT_QUOTES );
 		$footerlinks['github'] = "<a href=\"$href\" target=\"_blank\" rel=\"noopener noreferrer\">$text</a>";
+
+		$legalUrl = htmlspecialchars( Title::newFromText( 'Legal Notice' )->getLocalURL(), ENT_QUOTES );
+		$footerlinks['legal-notice'] = "<a href=\"$legalUrl\">Legal Notice</a>";
 	}
 };
 
@@ -185,7 +188,16 @@ $wgAllowImageTag       = false;
 
 $wgRawHtml = false; # never enable on a public wiki
 
-$wgEnableEmail      = false; # configure SMTP and flip to true when ready
-$wgEnableUserEmail  = false;
+$wgEnableEmail     = true;
+$wgEnableUserEmail = true;
+$wgEmailAuthentication = true;
 
-$wgShowExceptionDetails = true; # TODO: set back to false before going public
+$wgSMTP = [
+	'host'      => getenv( 'SMTP_HOST' ) ?: 'localhost',
+	'port'      => (int)( getenv( 'SMTP_PORT' ) ?: 587 ),
+	'auth'      => true,
+	'username'  => getenv( 'SMTP_USER' ) ?: '',
+	'password'  => getenv( 'SMTP_PASSWORD' ) ?: '',
+];
+
+$wgPasswordSender = getenv( 'SMTP_FROM' ) ?: 'wiki@altered.wiki';

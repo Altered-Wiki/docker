@@ -28,6 +28,11 @@ Fill in `.env`:
 | `MW_ADMIN_PASSWORD` | Password for the `Admin` wiki account |
 | `MW_SERVER` | Public URL of the wiki, e.g. `https://altered.wiki` |
 | `ALTCHA_HMAC_KEY` | HMAC key for the Altcha CAPTCHA — `openssl rand -hex 32` |
+| `SMTP_HOST` | SMTP server hostname |
+| `SMTP_PORT` | SMTP port (default: `587`) |
+| `SMTP_USER` | SMTP login username |
+| `SMTP_PASSWORD` | SMTP login password |
+| `SMTP_FROM` | From address for outgoing wiki mail |
 
 Then start:
 
