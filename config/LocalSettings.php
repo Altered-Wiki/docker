@@ -58,8 +58,14 @@ $wgScribuntoDefaultEngine = 'luasandbox';
 wfLoadExtension( 'VisualEditor' );
 $wgVisualEditorAvailableNamespaces = [ NS_MAIN => true, NS_TALK => true ];
 $wgDefaultUserOptions['visualeditor-enable'] = 1;
-# Parsoid is bundled in MW 1.41+ — no separate container needed
+# Parsoid is bundled in MW 1.41+ — no separate container needed.
+# Point it at localhost so it doesn't try to reach $wgServer externally from inside the container.
 $wgParserEnableLegacyMediaDOM = false;
+$wgVirtualRestConfig['modules']['parsoid'] = [
+	'url' => 'http://localhost/rest.php',
+	'domain' => 'localhost',
+	'prefix' => 'localhost',
+];
 
 wfLoadExtension( 'Echo' );
 wfLoadExtension( 'Thanks' );
