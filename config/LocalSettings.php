@@ -67,6 +67,7 @@ $wgVirtualRestConfig['modules']['parsoid'] = [
 	'prefix' => 'localhost',
 ];
 
+wfLoadExtension( 'Cite' );
 wfLoadExtension( 'Echo' );
 wfLoadExtension( 'Thanks' );
 wfLoadExtension( 'AbuseFilter' );
