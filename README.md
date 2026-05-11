@@ -23,6 +23,7 @@ Fill in `.env`:
 |---|---|
 | `DB_PASSWORD` | MariaDB password for the `mediawiki` user |
 | `DB_ROOT_PASSWORD` | MariaDB root password |
+| `MW_PORT` | Host port to expose MediaWiki on (default: `3000`) |
 | `MW_SECRET_KEY` | MediaWiki secret key — `openssl rand -hex 32` |
 | `MW_UPGRADE_KEY` | MediaWiki upgrade key — `openssl rand -hex 32` (optional) |
 | `MW_ADMIN_PASSWORD` | Password for the `Admin` wiki account |

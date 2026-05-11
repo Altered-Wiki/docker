@@ -3,7 +3,7 @@ services:
     build: .
     restart: unless-stopped
     ports:
-      - "3000:80"
+      - "${MW_PORT:-3000}:80"
     environment:
       MEDIAWIKI_DB_HOST: mariadb
       MEDIAWIKI_DB_NAME: mediawiki
