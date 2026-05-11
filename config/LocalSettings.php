@@ -164,12 +164,11 @@ $wgGroupPermissions['user']['createpage'] = true;
 
 # --- Footer -----------------------------------------------------------------
 
+# Order and content of footer places links (disclaimer, privacy, then our Legal Notice)
+$wgFooterLinks['places'] = [ 'disclaimer', 'privacy' ];
+
 $wgHooks['SkinAddFooterLinks'][] = static function ( Skin $skin, string $key, array &$footerlinks ) {
 	if ( $key === 'places' ) {
-		$href = htmlspecialchars( $skin->msg( 'githubpage' )->text(), ENT_QUOTES );
-		$text = htmlspecialchars( $skin->msg( 'githubsite' )->text(), ENT_QUOTES );
-		$footerlinks['github'] = "<a href=\"$href\" target=\"_blank\" rel=\"noopener noreferrer\">$text</a>";
-
 		$legalUrl = htmlspecialchars( \MediaWiki\Title\Title::newFromText( 'Legal Notice' )->getLocalURL(), ENT_QUOTES );
 		$footerlinks['legal-notice'] = "<a href=\"$legalUrl\">Legal Notice</a>";
 	}

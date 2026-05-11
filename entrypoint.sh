@@ -50,12 +50,6 @@ first_run() {
     echo "-" \
         | php "$MW/maintenance/run.php" edit --user="Admin" --summary="Initial setup" \
             "MediaWiki:Aboutsite"
-    echo "https://github.com/Altered-Wiki" \
-        | php "$MW/maintenance/run.php" edit --user="Admin" --summary="Initial setup" \
-            "MediaWiki:Githubpage"
-    echo "GitHub" \
-        | php "$MW/maintenance/run.php" edit --user="Admin" --summary="Initial setup" \
-            "MediaWiki:Githubsite"
 
     touch "$SENTINEL"
     echo "[entrypoint] Setup complete"
