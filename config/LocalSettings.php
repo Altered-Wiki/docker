@@ -193,9 +193,10 @@ $wgAllowImageTag       = false;
 
 $wgRawHtml = false; # never enable on a public wiki
 
-$wgEnableEmail     = true;
-$wgEnableUserEmail = true;
-$wgEmailAuthentication = true;
+$wgEnableEmail          = true;
+$wgEnableUserEmail      = true;
+$wgEmailAuthentication  = true;
+$wgEmailConfirmToEdit   = true;
 
 $wgSMTP = [
 	'host'      => getenv( 'SMTP_HOST' ) ?: 'localhost',

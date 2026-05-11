@@ -14,6 +14,11 @@ services:
       MW_SECRET_KEY: ${MW_SECRET_KEY}
       MW_UPGRADE_KEY: ${MW_UPGRADE_KEY:-}
       ALTCHA_HMAC_KEY: ${ALTCHA_HMAC_KEY}
+      SMTP_HOST: ${SMTP_HOST:-localhost}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-wiki@altered.wiki}
     volumes:
       - mediawiki_images:/var/www/html/images
       - ./config/LocalSettings.php:/etc/mediawiki/LocalSettings.php:ro
