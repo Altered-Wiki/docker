@@ -170,7 +170,7 @@ $wgHooks['SkinAddFooterLinks'][] = static function ( Skin $skin, string $key, ar
 		$text = htmlspecialchars( $skin->msg( 'githubsite' )->text(), ENT_QUOTES );
 		$footerlinks['github'] = "<a href=\"$href\" target=\"_blank\" rel=\"noopener noreferrer\">$text</a>";
 
-		$legalUrl = htmlspecialchars( Title::newFromText( 'Legal Notice' )->getLocalURL(), ENT_QUOTES );
+		$legalUrl = htmlspecialchars( \MediaWiki\Title\Title::newFromText( 'Legal Notice' )->getLocalURL(), ENT_QUOTES );
 		$footerlinks['legal-notice'] = "<a href=\"$legalUrl\">Legal Notice</a>";
 	}
 };
