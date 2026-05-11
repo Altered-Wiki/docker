@@ -14,6 +14,8 @@ services:
       MW_SECRET_KEY: ${MW_SECRET_KEY}
       MW_UPGRADE_KEY: ${MW_UPGRADE_KEY:-}
       ALTCHA_HMAC_KEY: ${ALTCHA_HMAC_KEY}
+      MW_EMAIL_CONFIRM_TO_EDIT: ${MW_EMAIL_CONFIRM_TO_EDIT:-true}
+      MW_DEBUG: ${MW_DEBUG:-false}
       SMTP_HOST: ${SMTP_HOST:-localhost}
       SMTP_PORT: ${SMTP_PORT:-587}
       SMTP_USER: ${SMTP_USER:-}

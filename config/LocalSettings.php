@@ -68,6 +68,8 @@ $wgVirtualRestConfig['modules']['parsoid'] = [
 ];
 
 wfLoadExtension( 'Cite' );
+wfLoadExtension( 'Math' );
+$wgMathDefaultMode = 'mathml';
 wfLoadExtension( 'Echo' );
 wfLoadExtension( 'Thanks' );
 wfLoadExtension( 'AbuseFilter' );
@@ -194,10 +196,12 @@ $wgAllowImageTag       = false;
 
 $wgRawHtml = false; # never enable on a public wiki
 
+$wgShowExceptionDetails = getenv( 'MW_DEBUG' ) === 'true';
+
 $wgEnableEmail          = true;
 $wgEnableUserEmail      = true;
 $wgEmailAuthentication  = true;
-$wgEmailConfirmToEdit   = true;
+$wgEmailConfirmToEdit   = getenv( 'MW_EMAIL_CONFIRM_TO_EDIT' ) !== 'false';
 
 $wgSMTP = [
 	'host'      => getenv( 'SMTP_HOST' ) ?: 'localhost',

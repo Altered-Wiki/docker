@@ -70,6 +70,11 @@ COPY assets/cc-by-sa.png /var/www/html/cc-by-sa.png
 COPY config/apache-rewrite.conf /etc/apache2/conf-enabled/mediawiki-rewrite.conf
 RUN a2enmod rewrite
 
+# --- PHP configuration ------------------------------------------------------
+
+RUN echo "display_errors = Off" > /usr/local/etc/php/conf.d/errors.ini \
+ && echo "log_errors = On" >> /usr/local/etc/php/conf.d/errors.ini
+
 # --- Entrypoint -------------------------------------------------------------
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint-custom.sh"]
