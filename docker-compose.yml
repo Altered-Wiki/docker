@@ -36,7 +36,7 @@ services:
   jobrunner:
     build: .
     restart: unless-stopped
-    entrypoint: ["php", "/var/www/html/maintenance/run.php", "runJobs", "--wait", "--maxjobs=0"]
+    entrypoint: ["php", "/var/www/html/maintenance/run.php", "--conf", "/etc/mediawiki/LocalSettings.php", "runJobs", "--wait", "--maxjobs=0"]
     command: []
     environment:
       MEDIAWIKI_DB_HOST: mariadb
