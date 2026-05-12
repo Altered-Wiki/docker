@@ -162,10 +162,10 @@ $wgExtraNamespaces[NS_EXPERIENCE_TALK] = 'Experience_talk';
 $smwgNamespacesWithSemanticLinks[NS_SUBSTANCE] = true;
 $smwgNamespacesWithSemanticLinks[NS_RESEARCH]  = true;
 
-# Include custom namespaces in the default search profile
-$wgNamespacesToBeSearchedDefault[NS_SUBSTANCE]  = true;
-$wgNamespacesToBeSearchedDefault[NS_RESEARCH]   = true;
-$wgNamespacesToBeSearchedDefault[NS_EXPERIENCE] = true;
+# Treat custom namespaces as content namespaces (included in default search profile)
+$wgContentNamespaces[] = NS_SUBSTANCE;
+$wgContentNamespaces[] = NS_RESEARCH;
+$wgContentNamespaces[] = NS_EXPERIENCE;
 
 # --- Rights & permissions ---------------------------------------------------
 
