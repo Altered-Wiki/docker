@@ -7,4 +7,5 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENV REPO_PATH=/repo
 EXPOSE 9000
+ENV PYTHONUNBUFFERED=1
 ENTRYPOINT ["/entrypoint.sh"]
