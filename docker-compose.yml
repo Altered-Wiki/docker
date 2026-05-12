@@ -33,6 +33,35 @@ services:
       redis:
         condition: service_healthy
 
+  jobrunner:
+    build: .
+    restart: unless-stopped
+    command: ["php", "/var/www/html/maintenance/run.php", "runJobs", "--wait", "--maxjobs=0"]
+    environment:
+      MEDIAWIKI_DB_HOST: mariadb
+      MEDIAWIKI_DB_NAME: mediawiki
+      MEDIAWIKI_DB_USER: mediawiki
+      MEDIAWIKI_DB_PASSWORD: ${DB_PASSWORD}
+      MW_SERVER: ${MW_SERVER:-http://localhost:3000}
+      MW_SECRET_KEY: ${MW_SECRET_KEY}
+      MW_UPGRADE_KEY: ${MW_UPGRADE_KEY:-}
+      ALTCHA_HMAC_KEY: ${ALTCHA_HMAC_KEY}
+      MW_EMAIL_CONFIRM_TO_EDIT: ${MW_EMAIL_CONFIRM_TO_EDIT:-true}
+      MW_DEBUG: ${MW_DEBUG:-false}
+      SMTP_HOST: ${SMTP_HOST:-localhost}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-wiki@altered.wiki}
+    volumes:
+      - mediawiki_images:/var/www/html/images
+      - ./config/LocalSettings.php:/etc/mediawiki/LocalSettings.php:ro
+    depends_on:
+      mediawiki:
+        condition: service_started
+      elasticsearch:
+        condition: service_healthy
+
   mariadb:
     image: mariadb:lts
     restart: unless-stopped
