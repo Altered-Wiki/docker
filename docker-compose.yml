@@ -104,7 +104,23 @@ services:
       timeout: 3s
       retries: 5
 
+  deploy:
+    build: ./deploy
+    restart: unless-stopped
+    ports:
+      - "${WEBHOOK_PORT:-9000}:9000"
+    environment:
+      WIKI_URL: ${WIKI_URL:-http://mediawiki}
+      WIKI_USERNAME: ${WIKI_USERNAME}
+      WIKI_PASSWORD: ${WIKI_PASSWORD}
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET}
+      REPO_URL: ${DEPLOY_REPO_URL}
+      REPO_PATH: /repo
+    volumes:
+      - deploy_repo:/repo
+
 volumes:
   mediawiki_images:
   mariadb_data:
   elasticsearch_data:
+  deploy_repo:
