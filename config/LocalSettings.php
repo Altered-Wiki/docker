@@ -118,7 +118,8 @@ wfLoadExtension( 'CirrusSearch' );
 
 $wgSearchType = 'CirrusSearch';
 $wgCirrusSearchServers = [ 'elasticsearch' ];
-$wgCirrusSearchUseCompletionSuggester = 'yes'; // powers Citizen's instant search
+$wgCirrusSearchUseCompletionSuggester = 'yes';
+$wgCirrusSearchCompletionSettings = 'fuzzy-subphrases'; // typo tolerance up to 2 edits
 
 # --- Domain extensions ------------------------------------------------------
 
